@@ -8,8 +8,8 @@ Nuestra proyecto consiste en la implementación de una infraestructura informát
 - Álvaro Murillo Baraza
 
 ## Enlaces a los documentos
-[Acerca de nostros] (docs/01-empresa.md)
-[Cómo se organiza nuestra empresa] (docs/02-organización)
-[Nuestro equipamiento] (docs/03-recursos-tic.md)
-[Inventario (Solo empleados)] (docs/04-maquinari-programari.md)
-[Medio ambiente y compromiso social] (docs/01-ods.md)
+[Acerca de nostros](docs/01-empresa.md)
+[Cómo se organiza nuestra empresa](docs/02-organización)
+[Nuestro equipamiento](docs/03-recursos-tic.md)
+[Inventario](docs/04-maquinari-programari.md)
+[Medio ambiente y compromiso social](docs/01-ods.md)
