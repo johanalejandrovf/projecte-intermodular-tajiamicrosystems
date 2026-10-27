@@ -1,6 +1,4 @@
-# Tajia Microsistems
-
-## 📍 Ubicado en Puerto Rico 
+# Tajia Microsistems | 📍 Ubicado en Puerto Rico 
 
 ## Acerca de nuestra empresa
 Tajia Microsystems S.L. pertenece al sector terciario, ya que nuestra actividad consiste en ofrecer servicios y no en fabricar productos. Ofrecemos la instalación de infraestructuras, como el cableado físico y de red, y la configuración de servidores y sistemas.
