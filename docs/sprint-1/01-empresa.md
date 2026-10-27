@@ -2,25 +2,14 @@
 
 ## 📍 Ubicado en Puerto Rico 
 
-### Actividad economica y sector al cual pertenece
-Nuestra actividad economica es la terciaria 
+## Acerca de nuestra empresa
+Tajia Microsystems S.L. pertenece al sector terciario, ya que nuestra actividad consiste en ofrecer servicios y no en fabricar productos. Ofrecemos la instalación de infraestructuras, como el cableado físico y de red, y la configuración de servidores y sistemas.
+ 
+Nos dirigimos tanto a empresas de todo tipo como a particulares. No importa el tamaño del cliente: nos comprometemos a ofrecer un servicio de calidad a todos. Somos una pyme de unos 60 trabajadores aproximadamente y generamos alrededor de 3 millones de euros al año, gracias a nuestra relación con grandes y pequeñas empresas y al boca a boca sobre la calidad de nuestros servicios.
+ 
+Para responder a las necesidades de nuestros clientes trabajamos con un modelo de citas, dando prioridad a las instalaciones más importantes o de mayor tamaño. Nuestro servicio es rápido y estamos con nuestros clientes lo antes posible.
 
-### Productos o servicios que ofrecemos
-Ofrecemos la instalación de infraestructuras como cableado fisico y de red, y configuración de servidores y sistemas.
-
-### Tipo de clientes a los que nos dirigimos
-Nos dirigimos a empresas de todo tipo y a particulares. No importa el tamaño, nos comprometemos a ofrecer un servicio de calidad con nuestros clientes.
-
-### Tamaño de la empresa y nombre aproximado de trabajadores
-Somos una pyme de unos 60 trabajadores aproximadamente.
-
-### Estimación justificada del volumen de negocio anual
-Nuestra empresa genera alrededor de 50 millones anualmente, gracias a nuestra relación con grandes y pequeñas empresas y al boca a boca de la calidad de nuestros servicios.
-
-### Estrategia para responder a las necesidades del cliente
-Funcionamos con un modelo de citas, dando prioridad a las instalaciones importantes o de mayor tamaño. Nuestro servicio es rápido y estamos ahí para nuestro clientes lo antes posibles. 
-
-## Empresas reales de nuestro sector
+### Empresas reales de nuestro sector
  
 ### 1. Telefónica Tech
  
