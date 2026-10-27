@@ -41,4 +41,4 @@ Tajia Microsystems S.L. tiene unos 60 trabajadores repartidos en una dirección 
  
 ## Organigrama de la empresa
  
-![Organigrama de Tajia Microsystems S.L.](img/organigrama.png)
+![Organigrama de Tajia Microsystems S.L.](../../img/organigrama.png)
