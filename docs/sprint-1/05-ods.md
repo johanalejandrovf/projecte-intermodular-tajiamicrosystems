@@ -1,7 +1,5 @@
 # Contribución a los ODS
  
-**Empresa:** Tajia Microsystems S.L.
- 
 ## ODS 9. Industria, innovación e infraestructuras
  
 - **Relación:** nuestra empresa monta redes y sistemas informáticos seguros y ofrece servicios por Internet a sus clientes. Así, otras empresas pueden usar buena tecnología sin tener que montarla ellas.
