@@ -6,6 +6,7 @@ Nuestra proyecto consiste en la implementación de una infraestructura informát
 ## Integrantes de nuestro equipo
 - Johan Alejandro Vallejo Figueroa
 - Álvaro Murillo Baraza
+- Juanjo Silvestre Sarrió
 
 ## Enlaces a los documentos
 - [Acerca de nostros](docs/sprint-1/01-empresa.md)
