@@ -2,14 +2,14 @@
 
 Para las necesidades más importantes del documento `01-necessitats.md` hemos estudiado dos alternativas antes de decidir. En cada una comparamos ventajas, limitaciones, coste aproximado y requisitos técnicos.
 
-## Alternativa 1: servidores propios o servicios en la nube
+## Alternativa 1: servidores propios o servicios alojados en la nube
 
 ### Comparación
 
 | Criterio | Servidores propios | Servicios en la nube |
 |----------|--------------------|----------------------|
 | Inversión inicial | Alta: hay que comprar los equipos | Ninguna |
-| Coste mensual | Bajo: solo luz y mantenimiento | Alto: cuota fija todos los meses |
+| Coste mensual | Bajo: luz y mantenimiento | Alto: cuota fija todos los meses |
 | Control de los datos | Total: están en la empresa | Están en servidores de otra empresa |
 | Velocidad en la oficina | Muy alta, es red local | Depende de la conexión a Internet |
 | Si se cae Internet | Se sigue trabajando dentro | No se puede trabajar |
@@ -20,16 +20,16 @@ Para las necesidades más importantes del documento `01-necessitats.md` hemos es
 
 | Concepto | Servidores propios | Servicios en la nube |
 |----------|--------------------|----------------------|
-| Compra de equipos | 14.000 € | 0 € |
+| Compra de equipos | 2.600 € | 0 € |
 | Puesta en marcha | Incluida en la implantación | 1.000 € |
-| Gasto anual | 2.000 € | 5.400 € |
-| **Total a 5 años** | **24.000 €** | **28.000 €** |
+| Gasto anual | 600 € | 4.800 € |
+| **Total a 5 años** | **5.600 €** | **25.000 €** |
 
 ### Requisitos técnicos
 
 | | Servidores propios | Servicios en la nube |
 |---|---|---|
-| Espacio | Sala de servidores con rack y ventilación | No hace falta |
+| Espacio | Armario rack en la sala de servidores | No hace falta |
 | Conexión | Red local propia | Fibra rápida y estable, obligatoria |
 | Personal | Alguien que sepa administrar servidores | Menos personal técnico |
 | Protección eléctrica | SAI | No hace falta |
@@ -38,121 +38,126 @@ Para las necesidades más importantes del documento `01-necessitats.md` hemos es
 
 La elegimos por tres motivos:
 
-- **Es más barata a medio plazo.** A partir del cuarto año sale mejor la opción propia, y los equipos siguen sirviendo después.
+- **Es mucho más barata.** A partir del primer año ya sale mejor, y los equipos siguen sirviendo después.
 - **Controlamos los datos.** Trabajamos con datos de clientes, y tenerlos en la empresa nos facilita cumplir con la protección de datos.
-- **No dependemos de Internet para trabajar.** Si se cae la fibra, los trabajadores siguen accediendo a los ficheros, al dominio y a la base de datos.
+- **No dependemos de Internet para trabajar.** Si se cae la fibra, los trabajadores siguen accediendo al dominio, a las carpetas compartidas y a las copias.
 
-La limitación es que necesitamos la inversión inicial y alguien que mantenga los servidores. Lo asumimos porque el departamento de Taller ya tiene administradores de sistemas.
+La limitación es que necesitamos la inversión inicial y alguien que mantenga los servidores. La asumimos porque el departamento de Taller ya tiene administradores de sistemas.
 
-## Alternativa 2: red toda cableada o red mixta
+## Alternativa 2: una sola red interna o varias redes separadas por departamento
 
 ### Comparación
 
-| Criterio | Toda cableada | Mixta (cable + Wi-Fi) |
-|----------|---------------|------------------------|
-| Velocidad | Máxima en todos los equipos | Máxima por cable, algo menor por Wi-Fi |
-| Estabilidad | Muy alta | Alta, puede haber interferencias |
-| Movilidad | Ninguna | Los portátiles se mueven libremente |
-| Seguridad | Muy alta, hay que enchufarse | Alta, con WPA3 y red de invitados aparte |
-| Obra necesaria | Una toma por cada equipo | Solo en los puestos fijos |
-| Visitantes | No tienen conexión | Red de invitados separada |
+| Criterio | Una sola red (elegida) | Una red por departamento |
+|----------|------------------------|--------------------------|
+| Equipos de red | 1 switch de 32 puertos | 5 switches + enrutamiento entre redes |
+| Configuración | Sencilla: todos en 192.168.1.0/24 | Compleja: rutas y permisos entre redes |
+| Comunicación entre departamentos | Directa, por el switch | Tiene que pasar por el router o firewall |
+| Separación de tráfico | Todos comparten el mismo dominio de difusión | Cada departamento aislado |
+| Mantenimiento | Lo lleva una persona sin problema | Necesita más conocimientos |
+| Coste | Más bajo | Más alto |
 
 ### Coste aproximado
 
-| Concepto | Toda cableada | Mixta |
-|----------|---------------|-------|
-| Tomas de red (70 € cada una) | 35 tomas: 2.450 € | 20 tomas: 1.400 € |
-| Puntos de acceso Wi-Fi | 0 € | 2 puntos: 500 € |
-| **Total** | **2.450 €** | **1.900 €** |
+| Concepto | Una sola red | Una red por departamento |
+|----------|--------------|--------------------------|
+| Switch de 32 puertos | 1.113 € | — |
+| Switches de 8 y 16 puertos | — | 5 switches: unos 900 € |
+| Equipo que enrute entre redes | Lo hace el firewall | Switch de nivel 3: unos 800 € |
+| **Total** | **1.113 €** | **1.700 €** |
 
 ### Requisitos técnicos
 
-| | Toda cableada | Mixta |
+| | Una sola red | Una red por departamento |
 |---|---|---|
-| Cableado | Cable hasta cada puesto | Solo hasta los puestos fijos |
-| Switches | Más puertos | 2 switches de 24 puertos |
-| Equipos extra | Ninguno | 2 puntos de acceso Wi-Fi 6 |
+| Direccionamiento | Un único rango /24 | Cinco rangos distintos |
+| Equipos | 1 switch gestionable | 5 switches + enrutamiento |
+| Conocimientos | Básicos | Enrutamiento y reglas entre redes |
 
-### Opción elegida: red mixta
+### Opción elegida: una sola red interna
 
-- **Cable** para los ordenadores de sobremesa, las impresoras y los servidores, que no se mueven y necesitan la máxima velocidad.
-- **Wi-Fi** para los portátiles de Dirección e Implantación, que entran y salen continuamente.
-- Además, nos permite tener una **red de invitados separada**, que con cable no tendría sentido.
+Con 24 trabajadores no compensa dividir la empresa en varias redes. Una sola red de 254 direcciones sobra para los 29 equipos actuales y deja sitio para crecer, es más barata y mucho más fácil de mantener.
 
-Sale más barata que cablearlo todo y da movilidad. La limitación es que el Wi-Fi es algo más lento, pero los portátiles no hacen tareas que necesiten la máxima velocidad.
+Para no perder el orden, **reservamos un rango de direcciones a cada departamento** (ver `04-adrecament-ip.md`): viendo la IP de un equipo ya se sabe de qué departamento es, aunque todos estén en la misma red.
 
-## Aspecto innovador: copia de seguridad híbrida
+La limitación es que todos los equipos comparten el mismo dominio de difusión y no hay aislamiento entre departamentos. Lo asumimos porque la separación que de verdad importa, la de los servicios públicos, sí la tenemos: está en la DMZ.
+
+## Aspecto innovador: copia de seguridad híbrida (local y en la nube)
 
 ### En qué consiste
 
-Las copias de seguridad no se guardan solo en el servidor de ficheros. Cada noche, una **copia cifrada** se envía automáticamente a un almacenamiento en la nube.
+Las copias de seguridad no se guardan solo en el NAS de la oficina. Cada noche, una **copia cifrada** se envía automáticamente a un almacenamiento en la nube.
 
-Es lo que se conoce como la **regla 3-2-1**: tres copias de los datos, en dos sitios distintos y una de ellas fuera de la empresa.
+Es lo que se conoce como la **regla 3-2-1**: tres copias de los datos, en dos soportes distintos y una de ellas fuera de la empresa.
 
 ### Para qué sirve
 
-| Situación | Sin copia en la nube | Con copia en la nube |
-|-----------|----------------------|----------------------|
-| Falla un disco | Se recupera del servidor | Se recupera del servidor |
-| Incendio o robo | Se pierde todo | Se recupera la copia de fuera |
-| Ransomware | Puede cifrar también las copias | La copia de fuera queda a salvo |
+| Situación | Solo con copias locales | Con copia también en la nube |
+|-----------|-------------------------|------------------------------|
+| Falla un disco | Se recupera del NAS (RAID) | Se recupera del NAS |
+| Incendio, inundación o robo | Se pierde todo | Se recupera la copia de fuera |
+| Ransomware que cifra la red | Puede cifrar también el NAS | La copia de fuera queda a salvo |
 
 ### Coste y requisitos
 
 | Concepto | Valor |
 |----------|-------|
-| Coste | Unos 120 € al año por 2 TB |
-| Requisitos | Conexión de fibra y software de copias (Veeam) |
-| Quién lo lleva | El técnico de seguridad del Taller |
+| Coste aproximado | Unos 120 € al año por 2 TB |
+| Requisitos | Conexión de fibra y el software Hyper Backup, que ya incluye el NAS |
+| Quién lo lleva | El administrador de sistemas del Taller |
 
-**Utilidad:** por muy poco dinero cubrimos el único riesgo que las copias locales no cubren, que es perder el edificio entero o un ataque que cifre también el servidor de copias. Para una empresa que guarda datos de clientes, es la mejora que más aporta por lo que cuesta.
+**Valoración de la utilidad:** por muy poco dinero cubrimos el único riesgo que las copias locales no cubren, que es perder el edificio entero o sufrir un ataque que cifre también el servidor de copias. Para una empresa que guarda datos de clientes, es la mejora que más aporta por lo que cuesta. Además, el NAS elegido trae el software incluido, así que no hay que comprar nada más.
 
 ## Estudio de viabilidad
 
-### Espacios
+### Coherencia con los espacios
 
 | Necesidad | ¿Lo cumplimos? |
 |-----------|----------------|
-| Sala de servidores con rack y ventilación | Sí, un rack de 42U es suficiente para 5 servidores y los equipos de red |
-| Distancia de los cables | Sí, ningún cable pasa de 100 metros, que es el límite del cable de red |
-| Zonas de la oficina | Sí, con 2 switches de acceso cubrimos las dos zonas de trabajo |
-| Cobertura Wi-Fi | Sí, 2 puntos de acceso bastan para una oficina de 25 personas |
+| Sala de servidores | Sí, un armario rack de 12U es suficiente para el firewall, el switch, el NAS y el SAI |
+| Distancia del cableado | Sí, ningún cable pasa de 100 metros, que es el límite del cable de par trenzado |
+| Tomas de red | Sí, 29 tomas para los equipos actuales y 3 puertos libres en el switch |
+| Ventilación y electricidad | Sí, la sala de servidores tiene toma de corriente propia y el SAI protege los equipos críticos |
 
-### Conocimientos disponibles
+### Coherencia con los conocimientos disponibles
 
 | Necesidad | ¿Lo cumplimos? |
 |-----------|----------------|
-| Administrar Windows Server y Ubuntu | Sí, el Taller tiene 2 administradores de sistemas |
-| Configurar VLAN, firewall y VPN | Sí, es el trabajo habitual de Implantación |
-| Seguridad y copias | Sí, el Taller tiene un técnico de seguridad |
+| Administrar Windows Server (dominio, DNS) | Sí, el Taller tiene administradores de sistemas |
+| Administrar Ubuntu Server (web y correo) | Sí, es el trabajo habitual del Taller y de Desarrollo web |
+| Configurar firewall, NAT y DMZ | Sí, es el trabajo habitual del departamento de Implantación |
+| Configurar el switch y el cableado | Sí, Implantación lo hace a diario en casa de los clientes |
 | Formar a los usuarios | Sí, lo hace el técnico de soporte durante la implantación |
 
-No hace falta ninguna tecnología que el equipo no conozca ya.
+No hace falta ninguna tecnología que el equipo no conozca ya. Tampoco hace falta contratar personal nuevo de forma permanente.
 
-### Equipos
+### Coherencia con los equipos previstos
 
 | Necesidad | Previsto en `05-recursos.md` |
 |-----------|------------------------------|
-| Un ordenador por trabajador | 27 ordenadores para 25 trabajadores (2 de pruebas) |
-| Servidores para los servicios | 5 servidores |
-| Equipos de red | 1 router, 1 firewall, 3 switches, 2 puntos de acceso |
+| Un ordenador por trabajador | 24 ordenadores para 24 trabajadores |
+| Servidor de dominio | 1 servidor |
+| Copias de seguridad | 1 NAS con 4 discos en RAID |
+| Servicios públicos | 2 servidores en la DMZ: web y correo |
+| Conectar todos los equipos | 1 switch de 32 puertos (29 usados, 3 libres) |
+| Proteger la red | 1 firewall con puerto LAN y puerto DMZ |
+| Impresión | 2 impresoras multifunción en red |
 | Protección eléctrica | 1 SAI |
 
 Todo lo que necesita el diseño está en la lista de recursos: no falta ningún equipo ni sobra ninguno.
 
-### Presupuesto
+### Coherencia con el presupuesto previsto
 
-| Concepto | Coste aproximado |
-|----------|------------------|
-| Ordenadores (27) | 30.000 € |
-| Servidores (5) | 12.500 € |
-| Equipos de red y cableado | 8.000 € |
-| Licencias (primer año) | 10.000 € |
-| Mano de obra de la implantación | 8.000 € |
-| **Total aproximado** | **68.500 €** |
+| Concepto | Importe aproximado |
+|----------|--------------------|
+| Equipos (hardware) | 22.300 € |
+| Licencias de compra | 3.770 € |
+| Suscripciones del primer año | 3.140 € |
+| Cableado e implantación | 5.000 € |
+| **Total aproximado** | **34.200 €** |
 
-Es una inversión que se reparte en unos 5 años, que es lo que duran los equipos, o sea unos **13.700 € al año**. El detalle está en el documento `06-pressupost.md`.
+Es una inversión que se reparte en unos 5 años, que es lo que duran los equipos, o sea unos **6.840 € al año**. Para una empresa de 24 trabajadores del sector informático es una cifra asumible. El detalle, con precios reales y enlaces, está en `06-pressupost.md`.
 
 ### Conclusión
 
-La solución es viable: cabe en el espacio disponible, el equipo sabe montarla y mantenerla, los equipos previstos cubren todas las necesidades y el presupuesto es asumible para una empresa de este tamaño.
+La solución es viable: cabe en el espacio disponible, el equipo sabe montarla y mantenerla, los equipos previstos cubren todas las necesidades identificadas y el presupuesto es razonable para una empresa de este tamaño.

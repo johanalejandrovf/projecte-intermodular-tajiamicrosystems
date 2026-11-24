@@ -1,91 +1,104 @@
 # Partes del proyecto y organización con Scrum y Trello
 
-**Empresa:** Tajia Microsystems S.L.
-**Proyecto:** implantación de una infraestructura informática segura (equipos, servidores, red, sistemas y servicios).
-
----
-
 ## 1. Partes principales del proyecto
 
-El proyecto se divide en cinco partes, que se hacen en este orden aunque algunas se solapan:
+El proyecto se divide en cinco partes. Cada una tiene un objetivo propio y entrega algo concreto que permite empezar la siguiente.
 
-| Parte | Objetivo | Documentos / resultado |
-|---|---|---|
-| **1. Análisis** | Entender qué necesita cada departamento y si las soluciones son viables técnica y económicamente. | `01-necessitats.md`, `02-alternatives-viabilitat.md` |
-| **2. Diseño** | Definir cómo será la infraestructura: red, direccionamiento IP, recursos materiales y humanos, y presupuesto. | `03-disseny-xarxa.md`, `04-adrecament-ip.md`, `05-recursos.md`, `06-pressupost.md` |
-| **3. Implantación** | Montar y configurar la infraestructura: cableado, red, servidores, sistemas operativos, usuarios, servicios y copias de seguridad. | Servidores y servicios funcionando |
-| **4. Pruebas** | Comprobar que todo funciona y es seguro: conectividad entre VLAN, acceso remoto, permisos de usuarios, restauración de copias y cortes de corriente. | Registro de pruebas y fallos corregidos |
-| **5. Documentación** | Dejar por escrito el proyecto, de forma que otra persona pueda entenderlo y mantenerlo: manuales, diagramas, contraseñas guardadas de forma segura y procedimientos. | `README.md`, ficheros `.md` e imágenes en `img/` |
+| Parte | Objetivo | Qué entrega |
+|-------|----------|-------------|
+| Análisis | Entender qué necesita la empresa antes de decidir nada | Tabla de necesidades por departamento y fuentes consultadas |
+| Diseño | Decidir cómo va a ser la solución y justificarla | Alternativas, diagrama de red, plan de direcciones, recursos y presupuesto |
+| Implantación | Montar lo diseñado y ponerlo en marcha | Red funcionando: sistemas instalados, dominio, DMZ y servicios |
+| Pruebas | Comprobar que todo funciona y es seguro | Informe de pruebas de conectividad, servicios, accesos y aislamiento |
+| Documentación | Dejar constancia de lo hecho y poder defenderlo | Documentación final y presentación del proyecto |
 
----
+### Análisis
 
-## 2. Organización con Scrum
+Partimos de la empresa definida en el Bloque 1 y averiguamos qué necesita de verdad cada departamento: conectividad, acceso a Internet, compartición de ficheros, impresión, cuentas de usuario, web corporativa y seguridad. Sin esta parte, el diseño se haría a ciegas. El resultado está en `01-necessitats.md`.
 
-Trabajamos con **Scrum**, una forma de organizar el trabajo en periodos cortos (*sprints*) con tareas pequeñas que se revisan con frecuencia.
+### Diseño
 
-| Concepto de Scrum | Cómo lo aplicamos en el proyecto |
-|---|---|
-| **Product Owner** | Persona que decide qué es lo más importante (en esta actividad, el profesorado y las necesidades de la empresa). |
-| **Scrum Master** | Integrante del equipo que cuida que se siga el método y quita obstáculos. Rota cada sprint. |
-| **Equipo de desarrollo** | Los integrantes del grupo, que se reparten las tareas. |
-| **Product Backlog** | Lista de todas las tareas del proyecto (lista *Pendiente* de Trello). |
-| **Sprint** | Periodo de trabajo con un objetivo. **Sprint 1** = Bloque 2 (planteamiento de soluciones TIC). |
-| **Reunión diaria / de equipo** | Revisión corta del tablero: qué hice, qué haré y qué me bloquea. |
-| **Revisión y retrospectiva** | Al final del sprint se enseña lo hecho y se decide qué mejorar. |
+Es la parte en la que estamos. Se proponen alternativas, se estudia su viabilidad y se elige una; se dibuja la topología de red con su DMZ; se reparten las direcciones IP y los nombres de los equipos; se eligen los recursos materiales y humanos; y se calcula el presupuesto. Nada se instala todavía: lo que se entrega son documentos que permiten decidir y, después, ejecutar.
 
----
+### Implantación
 
-## 3. Tablero de Trello
+Se monta lo diseñado: máquinas virtuales, sistemas operativos de clientes y servidores, nombres y direcciones, servidor de comunicaciones, red interna, DMZ, enrutamiento entre redes y servicios de red. Es la parte más larga del proyecto y ocupa varios sprints.
 
-- **Enlace al tablero (accesible para el profesorado):** `COMPLETAR → https://trello.com/b/XXXXXXXX/tajia-microsystems`
-  *(Compartir el tablero con el profesorado como «Observador/a» o hacerlo visible para quien tenga el enlace.)*
+### Pruebas
 
-![Captura del tablero de Trello](img/trello-tablero.png)
+Se comprueba que la infraestructura hace lo que tenía que hacer: que hay conectividad entre departamentos, que los servicios responden, que se puede acceder desde fuera a lo publicado en la DMZ y, sobre todo, que **desde la DMZ no se llega a la red interna**. Las incidencias que aparecen se corrigen aquí.
 
-> **COMPLETAR antes de entregar:** guardar una captura del tablero en `img/trello-tablero.png`.
+### Documentación
 
-### Listas del tablero
+Se recoge todo lo hecho en un documento final y se prepara la presentación y defensa. Incluye manuales de configuración, el plan de direcciones definitivo y las pruebas realizadas.
 
-| Lista | Significado |
-|---|---|
-| **Pendiente** | Tareas que aún no han empezado. |
-| **En proceso** | Tareas en las que alguien está trabajando ahora. |
-| **Finalizado** | Tareas terminadas y revisadas. |
+## 2. Metodología Scrum
 
-### Etiquetas (colores)
+Trabajamos por **sprints**: bloques de trabajo con un plazo fijo y un conjunto de tareas cerrado. Al terminar cada sprint se revisa lo hecho antes de pasar al siguiente.
 
-Una etiqueta por cada parte del proyecto: Análisis, Diseño, Implantación, Pruebas y Documentación.
+| Elemento de Scrum | Cómo lo aplicamos |
+|-------------------|-------------------|
+| Product Backlog | Lista de todas las tareas del proyecto, sacadas del guion de los sprints |
+| Sprint Backlog | Las tarjetas de cada tablero de Trello, una por tarea del sprint |
+| Sprint | Cada uno de los siete bloques del proyecto, de 4 o 5 semanas |
+| Sprint Planning | Al empezar el sprint repartimos las tarjetas y ponemos responsable y fecha |
+| Daily | Al empezar cada sesión repasamos en qué está cada uno y qué bloquea |
+| Sprint Review | Al cerrar el sprint comprobamos que las tarjetas están realmente terminadas |
+| Retrospectiva | Anotamos qué ha funcionado y qué cambiamos para el sprint siguiente |
 
-### Tarjetas del tablero
+Los roles los repartimos entre los dos miembros del equipo: uno hace de responsable de organización (seguimiento del tablero y de los plazos) y el otro de responsable técnico, y ambos ejecutan tareas.
 
-Cada tarjeta tiene un responsable y una breve descripción. Los nombres de los integrantes se escriben en la columna *Responsable* (aquí aparecen como Integrante 1, 2, 3...).
+## 3. Organización en Trello
 
-| Nº | Tarjeta | Parte | Responsable | Breve descripción | Lista inicial |
-|---:|---|---|---|---|---|
-| 1 | Necesidades por departamento | Análisis | Integrante 1 | Tabla con las necesidades de cada departamento, usuarios afectados y justificación. | Finalizado |
-| 2 | Alternativas y viabilidad | Análisis | Integrante 2 | Comparar soluciones posibles y elegir la más viable técnica y económicamente. | Finalizado |
-| 3 | Diseño de la red | Diseño | Integrante 3 | Esquema de red con VLAN, switches, firewall y zona DMZ. | En proceso |
-| 4 | Direccionamiento IP | Diseño | Integrante 1 | Plan de direcciones IP y subredes por departamento. | En proceso |
-| 5 | Recursos materiales y humanos | Diseño | Integrante 2 | Equipos, servidores, red, sistemas, aplicaciones y equipo de implantación. | Finalizado |
-| 6 | Presupuesto económico | Diseño | Integrante 3 | Presupuesto con precios reales, licencias, IVA y justificación. | Finalizado |
-| 7 | Planificación con Scrum y Trello | Diseño | Integrante 1 | Partes del proyecto, tablero de Trello y tarjetas. | En proceso |
-| 8 | Cableado y rack | Implantación | Integrante 2 | Tirar cable, instalar tomas y montar el rack. | Pendiente |
-| 9 | Configuración de router, firewall y switches | Implantación | Integrante 3 | VLAN, rutas, VPN, reglas del firewall y DMZ. | Pendiente |
-| 10 | Servidor de dominio | Implantación | Integrante 1 | Windows Server con Active Directory, DNS y DHCP. | Pendiente |
-| 11 | Servidor de ficheros y permisos | Implantación | Integrante 2 | Carpetas compartidas por departamento con permisos. | Pendiente |
-| 12 | Servidores Ubuntu (web, base de datos, correo) | Implantación | Integrante 3 | Instalar y configurar los tres servicios. | Pendiente |
-| 13 | Copias de seguridad (Veeam) | Implantación | Integrante 1 | Programar copias de los servidores y probar la restauración. | Pendiente |
-| 14 | Instalación de equipos cliente y antivirus | Implantación | Integrante 2 | Instalar Windows 11, unir al dominio y desplegar antivirus y aplicaciones. | Pendiente |
-| 15 | Pruebas de red y seguridad | Pruebas | Integrante 3 | Comprobar VLAN, firewall, VPN y acceso a los servicios. | Pendiente |
-| 16 | Pruebas de servicios y copias | Pruebas | Integrante 1 | Comprobar usuarios, permisos y restauración de copias. | Pendiente |
-| 17 | Documentación final y README | Documentación | Integrante 2 | Manuales, diagramas, enlaces y revisión final del repositorio. | Pendiente |
+Hemos creado **un tablero por sprint**, con las mismas tres listas en todos:
 
----
+| Lista en nuestro tablero | Equivale a |
+|--------------------------|------------|
+| PER FER | Pendiente |
+| FENT-SE | En proceso |
+| FETES | Finalizado |
 
-## 4. Cómo se relaciona el tablero con las partes del proyecto
+Cada tarjeta es una tarea del sprint y lleva:
 
-La planificación de Trello es una herramienta de organización. Para evaluar el CE RA2.f lo que cuenta es que cada parte del proyecto esté explicada:
+- **Título**: el nombre de la tarea, numerado para mantener el orden.
+- **Descripción**: el objetivo de la tarea y lo que hay que entregar.
+- **Estimación**: las horas previstas.
+- **Fecha de vencimiento**: la semana en la que debe estar terminada.
+- **Responsable**: el miembro del equipo que la ejecuta.
 
-- **Análisis y Diseño** (tarjetas 1-7) están hechas en este bloque: los ficheros de `docs/sprint-1/bloc-2/` los documentan.
-- **Implantación, Pruebas y Documentación** (tarjetas 8-17) se planifican para los siguientes sprints. Cada tarjeta tiene responsable y descripción, así que se sabe quién hace qué y qué se espera.
-- Cuando una tarjeta cambia de lista, el tablero refleja el avance real del proyecto.
+Una tarea avanza de izquierda a derecha: nace en PER FER, pasa a FENT-SE cuando alguien empieza a trabajar en ella y llega a FETES cuando está terminada y revisada por el compañero.
+
+### Enlaces a los tableros
+
+| Sprint | Enlace |
+|--------|--------|
+| Sprint 1 – Definició, disseny i planificació | https://trello.com/b/nkEzwG5J |
+| Sprint 2 – Implantació de la infraestructura | https://trello.com/b/hIUOfHmW |
+| Sprint 3 – Centralització, usuaris i recursos compartits | https://trello.com/b/vqWMAVcp |
+| Sprint 4 – Serveis de xarxa i accés remot | https://trello.com/b/weBje2Y8 |
+| Sprint 5 – Serveis web i seguretat | https://trello.com/b/qDmHFp6U |
+| Sprint 6 – Investigació i ampliació de la infraestructura | https://trello.com/b/zOe6pNXo |
+| Sprint 7 – Integració, documentació i validació final | https://trello.com/b/Nw6jmfLx |
+
+### Captura del tablero
+
+![Tablero de Trello del Sprint 1](../../../img/trello-sprint-1.png)
+
+## 4. Estado actual del proyecto
+
+| Sprint | Estado |
+|--------|--------|
+| Sprint 1 – Definición, diseño y planificación | En curso. Todas las tareas terminadas salvo el diagrama de red, que está en FENT-SE |
+| Sprints 2 a 7 | Pendientes. Todas las tarjetas en PER FER |
+
+## 5. Reparto del trabajo
+
+| Tarea del Bloque 2 | Responsable |
+|--------------------|-------------|
+| 01 – Necesidades TIC | |
+| 02 – Alternativas y viabilidad | |
+| 03 – Diseño de la red y diagrama | |
+| 04 – Direccionamiento IP y nombres | |
+| 05 – Selección de recursos | |
+| 06 – Presupuesto | |
+| 07 – Planificación y Trello | |

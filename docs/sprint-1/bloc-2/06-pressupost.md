@@ -1,168 +1,99 @@
 # Presupuesto económico
 
-**Empresa:** Tajia Microsystems S.L.
-**Base:** documento de recursos materiales y humanos (`05-recursos.md`).
-**Moneda:** euros (€). **Todos los importes de las tablas son SIN IVA** (IVA aplicable: 21 %). Al final se calcula el total con IVA.
+Todos los precios están **consultados el 24 de noviembre de 2026**. Los precios de tienda (PcComponentes, RS Components) **incluyen IVA**; los de suscripción de Microsoft **no incluyen IVA**, y por eso se les suma aparte.
 
-> **Aviso sobre los precios.** Son precios de referencia de tiendas y fabricantes consultados en noviembre de 2026. Cuando la tienda mostraba el precio con IVA, se ha convertido a base imponible dividiendo entre 1,21. Los precios de hardware varían mucho de un día a otro, así que conviene volver a comprobarlos antes de comprar. Cada fila lleva el número de la fuente (ver sección *Fuentes*).
-
----
-
-## 1. Equipos cliente
-
-Todos los equipos incluyen **Windows 11 Pro preinstalado** (licencia OEM incluida en el precio), por eso la fila de Windows 11 Pro de la sección 4 vale 0 €.
-
-| Descripción | Dpto. | Cant. | Precio unitario | Subtotal | Fuente |
-|---|---|---:|---:|---:|:---:|
-| Portátil Dell Pro 14 PC14250 (Core 5 120U, 16 GB, SSD 512 GB, Win 11 Pro) | Dirección | 2 | 725,75 € | 1.451,50 € | [1] |
-| Portátil Dell Latitude 3550 15,6" (Core Ultra 5 125U, 16 GB, SSD 512 GB, RJ45, Win 11 Pro) | Implantación | 9 | 693,39 € | 6.240,51 € | [2] |
-| PC sobremesa PcCom Work (i5-12400, 16 GB, SSD 500 GB, Win 11 Pro) | Gestión | 4 | 445,45 € | 1.781,80 € | [3] |
-| PC sobremesa PcCom Work (i7-12700, 32 GB, SSD 1 TB, Win 11 Pro) | Taller | 8 | 652,07 € | 5.216,56 € | [4] |
-| Estación Lenovo ThinkStation P2 (i7-14700, 32 GB, SSD 1 TB, RTX 4060, Win 11 Pro) | Desarrollo web | 4 | 1.652,07 € | 6.608,28 € | [4] |
-| **Subtotal equipos cliente (27 equipos)** | | **27** | | **21.298,65 €** | |
-
-## 2. Servidores
-
-Cada servidor es físico y separado, como indica el documento de recursos. Los discos adicionales se compran aparte para formar el RAID pedido. Los servidores se compran **sin sistema operativo**; las licencias están en la sección 4.
-
-| Descripción | Función | Cant. | Precio unitario | Subtotal | Fuente |
-|---|---|---:|---:|---:|:---:|
-| Dell PowerEdge T160 (Xeon E-2414, 16 GB, 2 TB HDD, sin SO) | Dominio | 1 | 916,53 € | 916,53 € | [5] |
-| Disco Seagate IronWolf 2 TB (segundo disco, **RAID 1**) | Dominio | 1 | 122,12 € | 122,12 € | [6] |
-| Dell PowerEdge T360 (Xeon E-2414, 16 GB, SSD 480 GB, sin SO) | Ficheros | 1 | 1.519,83 € | 1.519,83 € | [5] |
-| Disco Seagate IronWolf Pro 4 TB (3 discos en **RAID 5** = 8 TB útiles) | Ficheros | 3 | 165,25 € | 495,75 € | [6] |
-| Dell PowerEdge T160 (Xeon 6325P, 32 GB, SSD 480 GB, sin SO) | Web | 1 | 1.430,64 € | 1.430,64 € | [7] |
-| SSD Kingston DC600M 480 GB (segundo disco, **RAID 1**) | Web | 1 | 161,99 € | 161,99 € | [8] |
-| Dell PowerEdge T360 (Xeon 6325P, 32 GB ECC DDR5, SSD 480 GB, PERC H755, garantía 3 años) | Base de datos | 1 | 3.968,00 € | 3.968,00 € | [9] |
-| SSD Kingston DC600M 480 GB (3 más, 4 discos en **RAID 10** = 960 GB útiles) | Base de datos | 3 | 161,99 € | 485,97 € | [8] |
-| Dell PowerEdge T160 (Xeon E-2414, 16 GB, 2 TB HDD, sin SO) | Correo | 1 | 916,53 € | 916,53 € | [5] |
-| Disco Seagate IronWolf 2 TB (segundo disco, **RAID 1**) | Correo | 1 | 122,12 € | 122,12 € | [6] |
-| **Subtotal servidores (5 servidores)** | | | | **10.139,48 €** | |
-
-## 3. Dispositivos de red y alimentación
+## 1. Hardware
 
 | Descripción | Cant. | Precio unitario | Subtotal | Fuente |
-|---|---:|---:|---:|:---:|
-| Router MikroTik RB5009UG+S+IN (VPN, salida a fibra) | 1 | 176,86 € | 176,86 € | [10] |
-| Firewall Fortinet FortiGate 70F con licencia UTP + FortiCare de 1 año (VPN, DMZ) | 1 | 1.461,00 € | 1.461,00 € | [11] |
-| Switch principal Ubiquiti USW-Pro-Aggregation (nivel 3, VLAN, 10 Gb SFP+) | 1 | 869,68 € | 869,68 € | [12] |
-| Switch de acceso Ubiquiti USW-Pro-24-POE (24 puertos, PoE, VLAN, 2 × 10G SFP+) | 2 | 623,70 € | 1.247,40 € | [13] |
-| Punto de acceso Ubiquiti UniFi U6 Pro (Wi-Fi 6, PoE, WPA3) | 2 | 155,50 € | 311,00 € | [14] |
-| SAI APC Smart-UPS SMT3000RMI2UC (3000 VA, rack 2U) | 1 | 2.701,40 € | 2.701,40 € | [15] |
-| **Subtotal red y SAI** | | | **6.767,34 €** | |
+|---|---|---|---|---|
+| PC sobremesa Dell Slim ECS1250 i5-14400 / 16 GB / 512 GB SSD / Windows 11 Pro | 24 | 699,00 € | 16.776,00 € | [PcComponentes](https://www.pccomponentes.com/sobremesa/16gb-ram/512-gb-ssd/windows) |
+| Servidor de dominio: Dell OptiPlex 7020 SFF i5-14500 / 16 GB / 512 GB SSD | 1 | 739,00 € | 739,00 € | [PcComponentes](https://www.pccomponentes.com/sobremesa/16gb-ram/asus/dell/intel-i5/nuevo) |
+| Host de la DMZ: Dell OptiPlex 7020 SFF i5-14500 / 16 GB / 512 GB SSD | 1 | 739,00 € | 739,00 € | [PcComponentes](https://www.pccomponentes.com/sobremesa/16gb-ram/asus/dell/intel-i5/nuevo) |
+| NAS Synology RS422+ RackStation, 4 bahías | 1 | 995,95 € | 995,95 € | [PcComponentes](https://www.pccomponentes.com/synology-rs422-plus-rackstation-nas-4-bahias) |
+| Disco Seagate IronWolf NAS 4 TB (ST4000VN006) | 4 | 214,95 € | 859,80 € | [PcComponentes](https://www.pccomponentes.com/seagate-ironwolf-nas-35-4tb-sata-3) |
+| Switch gestionado Advantech EKI-7428G-4X-AE, 32 puertos Gigabit | 1 | 1.113,22 € | 1.113,22 € | [RS Components](https://es.rs-online.com/web/p/switches-ethernet/0715507) |
+| Firewall Fortinet FortiGate FG-40F | 1 | 429,30 € | 429,30 € | [Klarna (comparador, 5 tiendas)](https://www.klarna.com/es/shopping/cl/cl166/Firewalls/) |
+| Impresora multifunción láser HP LaserJet MFP M234sdn | 2 | 141,93 € | 283,86 € | [PcComponentes](https://www.pccomponentes.com/categorias/multifunciones/laser) |
+| SAI Phasak Protekt PH 7541, rack 19" 1U, 1500 VA / 900 W | 1 | 367,99 € | 367,99 € | [PcComponentes](https://www.pccomponentes.com/sai-phasak-protekt-ph-7541-sai-linea-interactiva-slim-para-rack-19-1u-1500va-900w-con-4-salidas-iec-c13) |
+| **Subtotal hardware (IVA incluido)** | | | **22.304,12 €** | |
 
-## 4. Sistemas operativos, aplicaciones y suscripciones
+## 2. Licencias de compra
 
-Aquí están las licencias y suscripciones necesarias. Las que son de pago **anual** se marcan como *recurrentes*.
+| Descripción | Cant. | Precio unitario | Subtotal | Fuente |
+|---|---|---|---|---|
+| Windows Server 2025 Standard (paquete de 16 núcleos) | 1 | 1.978,00 € | 1.978,00 € | [Microsoft](https://www.microsoft.com/es-es/d/Windows-Server-2025-Standard/dg7gmgf0wzrw) |
+| CAL de usuario Windows Server 2025 | 24 | 74,49 € | 1.787,76 € | [PcComponentes](https://www.pccomponentes.com/licencia-microsoft-windows-server-cal-2025-volume-licensing-1-usuario-espanol) |
+| Windows 11 Pro | 24 | 0,00 € | 0,00 € | Incluido en el precio de los equipos |
+| Synology DSM (sistema del NAS) | 1 | 0,00 € | 0,00 € | Incluido con el equipo |
+| Ubuntu Server 24.04 LTS | 2 | 0,00 € | 0,00 € | Software libre |
+| Apache, Postfix, VirtualBox, VS Code, Git, Wireshark, Packet Tracer | — | 0,00 € | 0,00 € | Software libre o gratuito |
+| **Subtotal licencias de compra** | | | **3.765,76 €** | |
 
-| Descripción | Cant. | Tipo | Precio unitario | Subtotal | Fuente |
-|---|---:|---|---:|---:|:---:|
-| Windows 11 Pro | 27 | Incluida en los equipos | 0,00 € | 0,00 € | [1]–[4] |
-| Windows Server 2025 Standard, 16 núcleos OEM (Dominio y Ficheros) | 2 | Perpetua | 949,00 € | 1.898,00 € | [16] |
-| Windows Server 2025 CAL de usuario (una por trabajador) | 25 | Perpetua | 54,00 € | 1.350,00 € | [17] |
-| Ubuntu Server 24.04 LTS (Web, Base de datos y Correo) | 3 | Software libre | 0,00 € | 0,00 € | [18] |
-| Microsoft 365 Empresa Estándar (12 meses × 20,36 €) | 25 | **Recurrente anual** | 244,32 € | 6.108,00 € | [19] |
-| Programa de gestión: Odoo Standard (12 meses × 14,90 €) | 6 | **Recurrente anual** | 178,80 € | 1.072,80 € | [20] |
-| Antivirus ESET PROTECT Entry (26-49 dispositivos, 1 año, equipos y servidores) | 32 | **Recurrente anual** | 23,99 € | 767,68 € | [21] |
-| Veeam Data Platform Foundation (copias de seguridad, 1 año) | 5 | **Recurrente anual** | 133,30 € | 666,50 € | [22] |
-| Cisco Packet Tracer, Wireshark, VirtualBox, VS Code y Git | 17 / 17 / 8 / 4 / 4 | Gratuitas | 0,00 € | 0,00 € | [23] |
-| **Subtotal licencias y suscripciones** | | | | **11.862,98 €** | |
+## 3. Suscripciones anuales
 
----
+| Descripción | Usuarios | Precio sin IVA | Subtotal anual sin IVA | Fuente |
+|---|---|---|---|---|
+| Microsoft 365 Empresa Básico | 24 | 6,07 €/usuario/mes | 1.748,16 € | [Microsoft](https://www.microsoft.com/es-es/microsoft-365/business/microsoft-365-plan-chooser) |
+| Microsoft Defender para Empresas | 24 | 2,60 €/usuario/mes | 748,80 € | [Microsoft](https://www.microsoft.com/es-es/microsoft-365/business/additional-services-plans-and-pricing) |
+| **Subtotal sin IVA** | | | **2.496,96 €** | |
+| IVA (21 %) | | | 524,36 € | |
+| **Subtotal suscripciones (IVA incluido)** | | | **3.021,32 €** | |
+| Copia de seguridad en la nube, 2 TB (estimación) | 1 | — | 120,00 € | Pendiente de presupuesto del proveedor |
+| **Total suscripciones del primer año** | | | **3.141,32 €** | |
 
-## 5. Resumen y total general
+## 4. Cableado e implantación
 
-| Bloque | Importe sin IVA |
-|---|---:|
-| 1. Equipos cliente | 21.298,65 € |
-| 2. Servidores | 10.139,48 € |
-| 3. Red y SAI | 6.767,34 € |
-| 4. Licencias y suscripciones | 11.862,98 € |
-| **Base imponible** | **50.068,45 €** |
-| IVA 21 % | 10.514,37 € |
-| **TOTAL GENERAL (IVA incluido)** | **60.582,82 €** |
+Estos dos conceptos **no tienen precio de catálogo**: dependen de la distribución real de la oficina y hay que pedir presupuesto a un instalador. Las cifras son una estimación de mercado para una instalación de este tamaño.
 
-**Coste recurrente anual a partir del segundo año** (sin IVA): 9.218,73 €. Son Microsoft 365 (6.108,00 €), Odoo (1.072,80 €), ESET (767,68 €), Veeam (666,50 €) y la renovación de la licencia UTP del firewall (603,75 € [24]).
+| Descripción | Importe estimado | Estado |
+|---|---|---|
+| Cableado estructurado Cat 6: 29 tomas, canaletas, latiguillos y armario rack 12U | 2.500,00 € | Pendiente de presupuesto |
+| Mano de obra de la implantación (equipo de 6 personas) | 2.500,00 € | Pendiente de presupuesto |
+| **Subtotal estimado** | **5.000,00 €** | |
 
-### ¿Los importes llevan IVA?
+## 5. Total general
 
-- **Sí se añade:** todas las tablas son **sin IVA** y el IVA (21 %) se suma solo en el total.
-- Algunas tiendas mostraban el precio con IVA (PcComponentes, Estonia, etc.). Esos precios se han convertido a base imponible. El switch principal se vendía con IVA de Estonia (24 %), por eso se divide entre 1,24 y no entre 1,21.
+| Apartado | Importe |
+|---|---|
+| 1. Hardware | 22.304,12 € |
+| 2. Licencias de compra | 3.765,76 € |
+| 3. Suscripciones del primer año | 3.141,32 € |
+| 4. Cableado e implantación (estimado) | 5.000,00 € |
+| **TOTAL** | **34.211,20 €** |
 
----
+| Concepto | Importe |
+|---|---|
+| Inversión inicial (apartados 1, 2 y 4) | 31.069,88 € |
+| Gasto recurrente a partir del segundo año | 3.141,32 €/año |
+| Coste medio anual amortizando los equipos a 5 años | unos 9.355 €/año |
 
 ## 6. Comprobación con el documento de recursos
 
-| Elemento | Documento de recursos | Presupuesto | ¿Coincide? |
-|---|---:|---:|:---:|
-| Portátiles Dirección / Implantación | 2 / 9 | 2 / 9 | ✔ |
-| Sobremesas Gestión / Taller / Desarrollo web | 4 / 8 / 4 | 4 / 8 / 4 | ✔ |
-| Servidores (dominio, ficheros, web, BD, correo) | 5 | 5 | ✔ |
-| Router / Firewall / Switch principal | 1 / 1 / 1 | 1 / 1 / 1 | ✔ |
-| Switches de acceso / Puntos de acceso / SAI | 2 / 2 / 1 | 2 / 2 / 1 | ✔ |
-| Windows 11 Pro / Windows Server / Ubuntu Server | 27 / 2 / 3 | 27 / 2 / 3 | ✔ |
-| Microsoft 365 / Programa de gestión | 25 / 6 | 25 / 6 | ✔ |
-| Packet Tracer y Wireshark / VirtualBox / VS Code y Git | 17 / 8 / 4 | 17 / 8 / 4 | ✔ |
-| Antivirus / Veeam | 32 / 5 | 32 / 5 | ✔ |
+| Elemento | En `05-recursos.md` | En este presupuesto |
+|---|---|---|
+| Equipos cliente | 24 | 24 |
+| Servidor de dominio | 1 | 1 |
+| Host de la DMZ (web y correo virtualizados) | 1 | 1 |
+| NAS de copias | 1 (4 bahías) | 1 + 4 discos |
+| Switch | 1 de 32 puertos | 1 de 32 puertos |
+| Firewall | 1 | 1 |
+| SAI | 1 | 1 |
+| Impresoras | 2 | 2 |
+| Licencias Windows Server | 1 + CAL por usuario | 1 + 24 CAL |
+| Suscripciones por usuario | 24 | 24 |
 
-Las cantidades de equipos, red y licencias coinciden con el documento de recursos. Las **líneas extra** (discos para el RAID y CAL de Windows Server) no cambian el número de equipos. Son componentes que exige la configuración pedida: RAID 1, RAID 5 y RAID 10, y una CAL por usuario.
+Las cantidades coinciden. El número de tomas de red del apartado 4 (29) coincide también con los puertos ocupados del switch en `03-disseny-xarxa.md` y con las direcciones asignadas en `04-adrecament-ip.md`.
 
----
+## 7. Justificación de las decisiones principales
 
-## 7. Justificación de las principales decisiones
+- **Un solo modelo de ordenador para los 24 puestos.** Pagamos algo más en Dirección y Gestión, que no necesitan tanta potencia, pero ahorramos en mantenimiento, piezas de repuesto y tiempo de instalación, y conseguimos mejor precio por volumen. Además, los 16 GB permiten que Taller levante máquinas virtuales sin comprar equipos distintos.
+- **Servidores de la DMZ virtualizados sobre un solo equipo.** Dos máquinas físicas costarían 739 € más y consumirían el doble. Con 24 trabajadores, un equipo con 16 GB sobra para la web y el correo.
+- **Ubuntu Server en lugar de Windows Server para la DMZ.** Ahorramos otra licencia de 1.978 € y las CAL correspondientes. Es además el sistema más usado y documentado para servidores web y de correo.
+- **El gasto más alto en software es Windows Server con sus CAL: 3.765,76 €.** Lo asumimos porque Active Directory es lo que permite centralizar usuarios y permisos, que era una de las necesidades identificadas en `01-necessitats.md`. Existen licencias ESD mucho más baratas en tiendas de terceros, pero hemos presupuestado el precio oficial de Microsoft para que la cifra sea defendible.
+- **Switch de 32 puertos gestionable (1.113,22 €) en lugar de uno no gestionable.** Uno sin gestión costaría unos 150 €, pero no permitiría ver el estado de los puertos ni separar departamentos en VLAN el día que la empresa crezca. Es la pieza que da margen de futuro a la instalación.
+- **SAI solo para los equipos críticos.** Proteger los 24 puestos multiplicaría el coste sin ganar casi nada: en un puesto de trabajo, un corte de luz no provoca pérdida de datos importante porque los documentos están en el NAS.
+- **El conjunto es razonable para la empresa.** Son 34.211,20 €, de los que 31.069,88 € son inversión inicial que se amortiza en cinco años. Para una empresa de 24 trabajadores del sector informático, que además vive de montar este tipo de instalaciones, es una cifra asumible.
 
-1. **Marcas y modelos empresariales.** Se eligen Dell y Lenovo en portátiles, servidores y estaciones porque dan garantía y soporte profesional. En los sobremesas de Gestión y Taller se usa el PcCom Work, que cumple los requisitos con buena relación precio/prestaciones.
-2. **Portátiles de Implantación con RJ45.** El documento de recursos exige puerto RJ45, porque el equipo configura redes y servidores por cable. Por eso se elige el Latitude 3550, que lo incluye de serie.
-3. **Servidores separados con RAID.** Se mantiene un servidor por servicio, como dice el documento de recursos. Los modelos T160 sirven para los servicios más ligeros (Dominio, Correo, Web). El T360 se usa donde hace falta más capacidad o una controladora RAID avanzada (Ficheros con RAID 5 y Base de datos con RAID 10).
-4. **Base de datos como servidor más caro.** Es el servidor más importante (clientes, citas y facturas), así que se pone un T360 de 32 GB con garantía de 3 años y discos SSD en RAID 10.
-5. **Red.** Ubiquiti UniFi es una solución profesional con buen precio y gestión centralizada. El firewall FortiGate incluye las protecciones de seguridad (IPS, antivirus, filtrado web), que casan con el requisito de seguridad de la empresa.
-6. **SAI de 3000 VA.** Es el elemento más caro de la red, pero mantiene encendidos los servidores si se va la luz, y la pérdida de datos costaría más.
-7. **Licencias.**
-   - Windows Server necesita una licencia por servidor físico y una CAL por usuario.
-   - Microsoft 365 se contrata por suscripción anual (opción de Microsoft para empresas).
-   - Odoo cubre clientes, citas y facturas con 6 usuarios.
-   - ESET protege los 27 equipos y los 5 servidores con una sola consola.
-   - Ubuntu Server y las herramientas de redes y desarrollo son gratuitas, lo que ahorra dinero.
-8. **Razonabilidad económica.** La inversión inicial ronda los 60.600 € con IVA (≈ 1.950 € por puesto de trabajo, contando 31 personas entre trabajadores y equipo de implantación). Es una cifra proporcionada para una empresa del sector TIC con un volumen de negocio de unos 50 millones al año. El coste recurrente (≈ 9.200 €/año) es asumible.
+## 8. Aviso sobre los precios
 
-### Lo que NO incluye este presupuesto
-
-- **Monitores, teclados, ratones y periféricos** de los sobremesas (no aparecen en el documento de recursos).
-- **Cableado estructurado, rack, cables DAC/SFP+ de 10 Gb y tomas de red** (aparecen como tarea del técnico de cableado, pero no como recurso material).
-- **Coste del equipo de implantación** (6 personas): es personal propio de la empresa, su coste ya está en nómina.
-- **Transporte e instalación.**
-
-Si el profesorado lo pide, conviene añadir estos materiales también al documento de recursos para mantener la coherencia.
-
----
-
-## Fuentes (consultables)
-
-| Nº | Producto | Enlace |
-|:---:|---|---|
-| [1] | Dell Pro 14 PC14250 (878,16 € con IVA) | https://www.pccomponentes.com/portatiles/14-pulgadas/dell/primera-generacion |
-| [2] | Dell Latitude 3550 (839 € con IVA) | https://www.pccomponentes.com/portatiles/16gb-ram/dell/intel-core-ultra-5/windows |
-| [3] | PcCom Work i5-12400 16 GB (539 € con IVA) | https://www.pccomponentes.com/sobremesa/16gb-ram/64gb-ram/windows/windows-11-pro |
-| [4] | PcCom Work i7-12700 32 GB (789 € con IVA) y ThinkStation P2 (1.999 € con IVA) | https://www.pccomponentes.com/sobremesa/1-tb-ssd/32-gb-ram/intel-i7/windows-11-pro |
-| [5] | Dell PowerEdge T160 (1.109 € con IVA) y T360 E-2414 (1.838,99 € con IVA) | https://www.pccomponentes.com/ordenadores-sobremesa/dell |
-| [6] | Seagate IronWolf 2 TB (147,77 € con IVA) y IronWolf Pro 4 TB (199,95 € con IVA) | https://www.pccomponentes.com/discos-duros/internos/seagate · https://www.pccomponentes.com/discos-duros/hdd-mecanico/internos/seagate |
-| [7] | Dell PowerEdge T160 Xeon 6325P 32 GB (1.731,07 € con IVA) | https://www.pccomponentes.com/servidores/sin-s-o/sin-sistema-operativo |
-| [8] | Kingston DC600M 480 GB (desde 161,99 € sin IVA) | https://www.bechtle.com/es/finder/product-family/ssd-internas-kingston-dc600m--4851--f |
-| [9] | Dell PowerEdge T360, 32 GB (3.968,00 € sin IVA) | https://www.bechtle.com/es/shop/servidores-dell-poweredge-t360--4993540--p |
-| [10] | MikroTik RB5009UG+S+IN (214 € con IVA) | https://comprasmartphone.com/routers/mikrotik-rb5009ug-plus-s-plus-in-router |
-| [11] | FortiGate 70F + UTP 1 año (1.461,00 € sin IVA) | https://www.bechtle.com/it-en/shop/fortinet-fortigate-70f-hardware-plus-forticare-premium-and-fortiguard-unified-threat-protection-utp-for-1-year--4691542--p |
-| [12] | Ubiquiti USW-Pro-Aggregation (1.078,40 € con IVA de Estonia, 24 %) | https://arvutitark.ee/ru/network-devices/switches/ubiquiti-switch-aggregation-1026787 |
-| [13] | Ubiquiti USW-Pro-24-POE (623,70 € neto) | https://www.esus-it.de/product-ger-55994-Switch-Ubiquiti-USW-PRO-24-POE-24x-10-100-1000-2x-SFP-400-W-PoE-PoE.html |
-| [14] | Ubiquiti U6 Pro (188,15 € con IVA) | https://www.pccomponentes.com/ubiquiti-networks-u6-pro-punto-de-acceso-inalambrico-wifi-6-4800-mbit-s-poe-blanco |
-| [15] | APC Smart-UPS SMT3000RMI2UC (2.701,40 € sin IVA) | https://opencircuit.shop/product/apc-smart-ups-smt3000rmi2uc-3000-va-2700-w |
-| [16] | Windows Server 2025 Standard 16 núcleos OEM (949,00 € neto) | https://software-express.de/preislisten/microsoft/microsoft-500040 |
-| [17] | Windows Server 2025 CAL de usuario perpetua (54,00 €; la web no indica IVA, se trata como sin IVA) | https://shop.aodatacloud.es/microsoft-windows-server |
-| [18] | Ubuntu Server (gratuito) | https://ubuntu.com/server |
-| [19] | Microsoft 365 Empresa Estándar, 20,36 €/usuario/mes sin IVA | https://www.microsoft.com/es-es/microsoft-365/business/microsoft-365-plans-and-pricing |
-| [20] | Odoo Standard, 14,90 €/usuario/mes con pago anual (precio en España según una guía externa; comprobar en la web oficial) | https://www.guiadesoftware.com/blog/cuanto-cuesta-odoo · https://www.odoo.com/es_ES/pricing |
-| [21] | ESET PROTECT Entry 26-49, 1 año (23,99 € sin IVA) | https://bechtle.com/de-en/shop/eset-protect-entry-26-49-1y--108534721--p |
-| [22] | Veeam Data Platform Foundation, pack de 10 instancias 1 año = 1.550 USD. Se calcula 155 USD por instancia y se convierte con un cambio **aproximado** de 0,86 €/USD (comprobar el cambio real) | https://www.shi.com/product/46221767/Veeam-Data-Platform-Foundation-Universal-License |
-| [23] | Packet Tracer, Wireshark, VirtualBox, VS Code y Git (gratuitos) | https://www.netacad.com · https://www.wireshark.org · https://www.virtualbox.org · https://code.visualstudio.com · https://git-scm.com |
-| [24] | Renovación UTP FortiGate 70F, 1 año (603,75 € sin IVA) | https://www.kommago.nl/p/unified-threat-protection-fortigate-70f-1-yr-79928 |
-
-> **Nota sobre el firewall:** Fortinet ha anunciado el fin de pedidos del modelo 70F (mayo de 2026) y su sustituto es el FortiGate 70G. El precio del 70F se usa como referencia de gama; en una compra real habría que presupuestar el 70G.
+Los precios de las tiendas online **cambian con frecuencia** (ofertas, Black Friday, cambios de stock). Antes de entregar el documento conviene volver a abrir los enlaces y actualizar las cifras y la fecha de consulta. Los dos conceptos del apartado 4 están marcados como estimación precisamente porque todavía no hay presupuesto formal de un instalador.
